@@ -1,0 +1,56 @@
+body {
+	background-color: #eee;
+}
+
+.app-container {
+	width: 350px;
+	margin: 5% auto;
+	
+}
+
+.m-b-sm {
+	margin-bottom: 10px;
+}
+
+textarea {
+	resize: none;
+}
+
+.form-control {
+	border-radius: 0px;
+}
+
+.has-feedback .form-control {
+  padding-left: 30px;
+}
+
+img {
+  height: 64px;
+  border-radius: 5px;
+}
+
+.form-control-feedback {
+  left: 0;
+  right: none;
+}
+
+.feed {
+	background-color: #fff;
+	padding: 20px;
+	border: 1px #ddd solid;
+	display: flex;
+	flex-direction: column;
+}
+
+.post {
+	background-color: #ddd;
+	padding: 20px;
+}
+
+.m-b-md {
+	margin-bottom: 15px;
+}
+
+ul {
+	padding-left: 0px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>BigPandi</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="./styles/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./styles/bigpandi.css">
+
+  <div class="app-container" ng-controller="FeedController as vm">
+    <form class="post text-right" ng-submit="vm.newPost(vm.email, vm.message)">
+      <input ng-model="vm.email" placeholder="Email" type="email" class="form-control m-b-sm" required>
+      <textarea ng-model="vm.message" placeholder="Message" rows="3" class="form-control m-b-sm" required></textarea>
+      <button type="submit" class="btn btn-info">SUBMIT</button>
+    </form>
+    <form class="feed">
+      <div class="form-group has-feedback m-b-md">
+        <input ng-model="filter" class="form-control" type="text" placeholder="Filter">
+        <i class="glyphicon glyphicon-search form-control-feedback text-muted"></i>
+      </div>
+      <ul>
+        <li class="media" ng-repeat="post in vm.feed | filter: filter">
+          <div class="media-left">
+            <img src="{{post.img}}">
+          </div>
+          <div class="media-body">
+            <h5><strong>{{post.email}}</strong></h5>
+            <span class="text-muted">{{post.message}}</span>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="./angular.js"></script>
+  <script type="text/javascript" src="./app.module.js"></script>
+  <script type="text/javascript" src="./app.controller.js"></script>
+  <script type="text/javascript" src="./app.api.js"></script>
+</body>
+</html>
